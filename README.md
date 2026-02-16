@@ -51,6 +51,8 @@ Update the database credentials in app.py:
 
 Python
 app.config['MYSQL_PASSWORD'] = '#Aditichaudhuri12345'
+
+
 Launch the application:
 
 Bash
@@ -67,4 +69,6 @@ Database: Executes optimized queries to retrieve or store relational data.
 Presentation: Jinja2 renders the database results into a responsive HTML template for the user.
 
 Author: [Aditi Chaudhuri]
+
+
 Project Status: MVP Complete (February 2026)
