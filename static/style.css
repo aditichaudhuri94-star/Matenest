@@ -1,0 +1,36 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+}
+
+.bg-primary {
+    background-color: #4361ee !important;
+}
+
+.btn-primary {
+    background-color: #4361ee;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #374dc7;
+}
+
+.hover-card {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.card-title {
+    color: #2b2d42;
+}
+
+.form-control:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}

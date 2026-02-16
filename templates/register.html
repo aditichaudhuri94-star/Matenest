@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 p-4 p-md-5">
+            <h2 class="fw-bold mb-4">Create Your Profile</h2>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Username</label>
+                    <input type="text" name="username" class="form-control py-2" required placeholder="John Doe">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address</label>
+                    <input type="email" name="email" class="form-control py-2" required placeholder="john@example.com">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Monthly Budget ($)</label>
+                        <input type="number" name="budget" class="form-control py-2" required placeholder="1000">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Gender</label>
+                        <select name="gender" class="form-select py-2">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Desired Location</label>
+                    <input type="text" name="location" class="form-control py-2" required placeholder="e.g. Manhattan, NY">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Bio / Preferences</label>
+                    <textarea name="bio" class="form-control" rows="4" placeholder="Tell us about yourself and what you're looking for in a roommate..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Post My Profile</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

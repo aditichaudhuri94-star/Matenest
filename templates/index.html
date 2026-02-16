@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row py-5 bg-white rounded shadow-sm mb-5">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="display-5 fw-bold text-dark">Find your perfect roommate.</h1>
+        <p class="lead text-muted mb-4">Search by city to find people looking for a home.</p>
+        <form action="/" method="GET" class="d-flex gap-2">
+            <input type="text" name="location" class="form-control form-control-lg border-2" placeholder="Where do you want to live? (e.g. New York)">
+            <button type="submit" class="btn btn-primary btn-lg px-5">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    {% if roommates %}
+        {% for person in roommates %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow hover-card">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-weight: bold; font-size: 1.2rem;">
+                            {{ person.username[0] | upper }}
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="mb-0 fw-bold">{{ person.username }}</h5>
+                            <small class="text-primary fw-semibold">📍 {{ person.location }}</small>
+                        </div>
+                    </div>
+                    <p class="card-text text-muted mb-4">"{{ person.bio }}"</p>
+                    <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+                        <div>
+                            <small class="text-muted d-block">Budget</small>
+                            <span class="fw-bold text-success fs-5">${{ person.budget }}</span>
+                        </div>
+                        <a href="mailto:{{ person.email }}?subject=Matenest Connection Request" class="btn btn-outline-primary rounded-pill px-4">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="text-center py-5">
+            <h3>No roommates found in that location.</h3>
+            <a href="/" class="btn btn-link">View all profiles</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
