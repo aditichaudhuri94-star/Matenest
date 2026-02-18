@@ -10,6 +10,8 @@ Frontend: HTML5, CSS3, JavaScript, and Bootstrap 5
 
 Templating: Jinja2 (Server-Side Rendering)
 
+Replit link:[https://matenest--aditichaudhuri9.replit.app]
+
 🚀 Key Features
 Roommate Discovery: A real-time feed of user profiles fetched dynamically from the MySQL database.
 
@@ -72,3 +74,4 @@ Author: [Aditi Chaudhuri]
 
 
 Project Status: MVP Complete (February 2026)
+
