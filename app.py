@@ -46,5 +46,21 @@ def register():
             
     return render_template('register.html')
 
+
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete_profile(id):
+    try:
+        cursor = mysql.connection.cursor()
+        # Execute the delete query based on the ID
+        cursor.execute("DELETE FROM users WHERE id = %s", (id,))
+        mysql.connection.commit()
+        cursor.close()
+        flash('Profile removed from the nest.', 'info')
+    except Exception as e:
+        flash(f'Error deleting profile: {str(e)}', 'danger')
+        
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
+
     app.run(debug=True)
