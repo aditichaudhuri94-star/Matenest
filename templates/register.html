@@ -6,8 +6,8 @@
             <h2 class="fw-bold mb-4">Create Your Profile</h2>
             <form method="POST">
                 <div class="mb-3">
-                    <label class="form-label fw-semibold">Username</label>
-                    <input type="text" name="username" class="form-control py-2" required placeholder="John Doe">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input type="text" name="fullname" class="form-control py-2" required placeholder="John Dey">
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Email Address</label>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label class="form-label fw-semibold">Monthly Budget ($)</label>
+                        <label class="form-label fw-semibold">Monthly Budget (INR)</label>
                         <input type="number" name="budget" class="form-control py-2" required placeholder="1000">
                     </div>
                     <div class="col-md-6">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-semibold">Desired Location</label>
-                    <input type="text" name="location" class="form-control py-2" required placeholder="e.g. Manhattan, NY">
+                    <input type="text" name="location" class="form-control py-2" required placeholder="e.g. Bhubaneswar,Odisha">
                 </div>
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Bio / Preferences</label>
@@ -40,4 +40,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
