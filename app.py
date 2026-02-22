@@ -6,9 +6,9 @@ app = Flask(__name__)
 app.secret_key = 'matenest_super_secret_key'
 
 # MySQL Configurations
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '#Aditichaudhuri12345'  # <--- UPDATE THIS
+app.config['MYSQL_PASSWORD'] = '#Aditichaudhuri12345' 
 app.config['MYSQL_DB'] = 'matenest'
 
 mysql = MySQL(app)
@@ -33,25 +33,30 @@ def register():
         try:
             d = request.form
             cur = mysql.connection.cursor()
+            
+            # Use 'fullname' to match the HTML input name="fullname"
             cur.execute("""INSERT INTO users(username, email, password, budget, location, gender, bio) 
                            VALUES(%s, %s, %s, %s, %s, %s, %s)""", 
-                        (d['username'], d['email'], 'default_pass', d['budget'], 
+                        (d['fullname'], d['email'], 'default_pass', d['budget'], 
                          d['location'], d['gender'], d['bio']))
+            
             mysql.connection.commit()
             cur.close()
             flash('Profile created successfully! Welcome to the nest.', 'success')
             return redirect(url_for('index'))
+            
         except Exception as e:
+            if mysql.connection:
+                mysql.connection.rollback()
             flash(f'Error: {str(e)}', 'danger')
+            return render_template('register.html')
             
     return render_template('register.html')
-
 
 @app.route('/delete/<int:id>', methods=['POST'])
 def delete_profile(id):
     try:
         cursor = mysql.connection.cursor()
-        # Execute the delete query based on the ID
         cursor.execute("DELETE FROM users WHERE id = %s", (id,))
         mysql.connection.commit()
         cursor.close()
@@ -62,5 +67,4 @@ def delete_profile(id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-
     app.run(debug=True)

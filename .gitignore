@@ -1,0 +1,18 @@
+# 🤫 Secrets (CRITICAL)
+.env
+instance/
+.venv/
+env/
+venv/
+ENV/
+
+# 🐍 Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 📂 OS & IDE files
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
