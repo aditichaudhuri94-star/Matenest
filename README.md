@@ -23,6 +23,18 @@ Profile Management: Track user budget, gender, and lifestyle bios.
 
 Responsive Design: Fully mobile-optimized UI built with Bootstrap 5.
 
+
+![matenest4](https://github.com/user-attachments/assets/6a930d75-eeb5-4e95-aa5d-81828bde2e1c)
+
+![matenest1](https://github.com/user-attachments/assets/c2eb8af7-e3f0-4a0a-9073-8032aeb50e85)
+
+
+![matenest 5](https://github.com/user-attachments/assets/88adda0b-9855-44a3-986f-9213c8055b7a)
+
+
+![matenest2](https://github.com/user-attachments/assets/fd841a7b-fee6-485c-a120-4efdcabbefe1)
+
+
 ⚙️ Installation & Setup
 1. Database Initialization
 Execute the following SQL commands in your MySQL environment:
@@ -83,3 +95,4 @@ Author: [Aditi Chaudhuri]
 Project Status: MVP Complete (February 2026)
 
 Security Note: Credentials are managed via environment variables and are never hardcoded in source control.
+
